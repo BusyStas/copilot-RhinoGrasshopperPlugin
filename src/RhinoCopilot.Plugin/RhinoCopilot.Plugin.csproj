@@ -10,10 +10,22 @@
     <Product>Stas Copilot</Product>
     <Version>0.1.0</Version>
     <Description>Stas Copilot: an AI copilot for Rhino and Grasshopper.</Description>
+    <!-- RhinoCommon 8.0 ships a .NET Framework build that is used for the net7.0 targets too. That is expected. -->
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="RhinoCommon" Version="8.0.23304.9001" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <!-- HttpClient lives in System.Net.Http, which is not referenced by default on .NET Framework. -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <!-- System.Drawing.Icon moved to System.Drawing.Common on .NET 7. Compile-time only: Rhino supplies it at run time. -->
+  <ItemGroup Condition="'$(TargetFramework)' != 'net48'">
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" ExcludeAssets="runtime" />
   </ItemGroup>
 
   <ItemGroup>
