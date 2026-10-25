@@ -8,7 +8,8 @@ rem Default: the "downloads" folder next to this file.
 rem Everything it prints is also saved to _build.txt (when run on its own;
 rem _install.bat saves the build output in _install.txt instead).
 rem
-rem Result:  <output>\StasCopilot\<framework>\StasCopilot.rhp  (plus dependencies)
+rem Result:  <output>\StasCopilot\<framework>\StasCopilot.rhp  (plus dependencies
+rem          and _setup.bat, the API key helper, next to it)
 rem          <output>\StasCopilot.zip
 rem ---------------------------------------------------------------------------
 
@@ -57,6 +58,8 @@ exit /b 0
 :collect
 if not exist "%BIN%\%~1\StasCopilot.rhp" goto :eof
 xcopy "%BIN%\%~1" "%DEST%\%~1\" /e /i /y /q >nul
+rem Ship _setup.bat (API key helper) next to the plugin; the key line is reset to the stub.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\copy-setup.ps1" -Destination "%DEST%\%~1"
 set "COLLECTED=1"
 goto :eof
 

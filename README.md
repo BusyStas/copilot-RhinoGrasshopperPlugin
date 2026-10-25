@@ -46,7 +46,8 @@ Built plugin files are committed in the [`downloads`](downloads) folder. To try 
 
 1. Download [`downloads/StasCopilot.zip`](downloads/StasCopilot.zip) and unzip it.
 2. In Rhino 8, run `PlugInManager`, click Install, and choose `StasCopilot\net7.0-windows\StasCopilot.rhp` from the unzipped folder.
-3. Set the `ANTHROPIC_API_KEY` environment variable (see [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)), restart Rhino, and run the `StasCopilot` command.
+3. Open `_setup.bat`, which sits in the same folder as `StasCopilot.rhp`, replace `PUT_CLAUDE_KEY_HERE` with your Anthropic API key, save it, and run it. It saves the key as the `ANTHROPIC_API_KEY` environment variable.
+4. Restart Rhino and run the `StasCopilot` command.
 
 ## Getting started
 
