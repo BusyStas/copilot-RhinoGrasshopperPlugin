@@ -86,7 +86,7 @@ To put the result somewhere else, pass a folder:
 _build.bat "%USERPROFILE%\Downloads"
 ```
 
-`_install.bat` does the same thing after checking prerequisites: it looks for the .NET SDK (version 8 or newer), offers to install it with winget if it is missing, runs `_build.bat`, opens the output folder, and prints the steps to install the plugin in Rhino.
+`_install.bat` does the same thing after checking prerequisites: it looks for the .NET SDK (version 8 or newer), offers to install it with winget if it is missing, runs `_build.bat`, opens the output folder, and prints the steps to install the plugin in Rhino. Everything it prints, including the build output, is also saved to `_install.txt` in the repository folder (overwritten on each run, ignored by git), so you can send that file when something goes wrong. The logging is done by `scripts\run-logged.ps1`, which shows the output on screen while saving it.
 
 To install the built plugin in Rhino 8, run `PlugInManager`, click Install, and choose `StasCopilot.rhp` from the `net7.0-windows` folder. Use the `net48` one only if you have switched Rhino to .NET Framework. Keep each framework's folder intact, because the `.rhp` needs the DLLs next to it.
 

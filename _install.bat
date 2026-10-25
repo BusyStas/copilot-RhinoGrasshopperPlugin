@@ -2,6 +2,20 @@
 setlocal EnableExtensions
 cd /d "%~dp0"
 
+rem ---------------------------------------------------------------------------
+rem Checks prerequisites, builds Stas Copilot and collects it in a downloads
+rem folder. Everything this script prints is also saved to _install.txt.
+rem
+rem Usage: _install.bat [output-folder]
+rem ---------------------------------------------------------------------------
+
+if defined STAS_INSTALL_LOGGING goto :run
+
+rem Relaunch through PowerShell so the output is shown on screen and saved to _install.txt.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\run-logged.ps1" -Log "%~dp0_install.txt" -ScriptName "_install.bat" %*
+exit /b %errorlevel%
+
+:run
 echo.
 echo Stas Copilot - setup and build
 echo ==============================
@@ -33,7 +47,8 @@ echo The .NET SDK was not found.
 :offerinstall
 where winget >nul 2>&1
 if errorlevel 1 goto :manual
-choice /c YN /m "Install the .NET 8 SDK now with winget"
+echo Install the .NET 8 SDK now with winget? [Y/N]
+choice /c YN /n >nul
 if errorlevel 2 goto :manual
 winget install --id Microsoft.DotNet.SDK.8 -e --accept-source-agreements --accept-package-agreements
 if errorlevel 1 goto :wingetfailed
@@ -80,4 +95,6 @@ echo The build failed. See the messages above.
 
 :end
 echo.
-pause
+echo This output was saved to %~dp0_install.txt
+echo Press any key to close this window.
+pause >nul
