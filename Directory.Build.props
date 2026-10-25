@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <Authors>BusyStas</Authors>
+    <Copyright>Copyright (c) 2026 BusyStas. All rights reserved.</Copyright>
+  </PropertyGroup>
+</Project>

@@ -41,6 +41,13 @@ A RhinoCommon plugin for Rhino 8 that adds a docked chat panel. The panel runs a
 - Building against RhinoCommon works from the NuGet package, but loading and running the plugin requires Rhino 8 on Windows or macOS. A Linux or cloud sandbox can write and unit-test code but cannot run the plugin.
 - When you cannot verify something against a running Rhino, say so plainly in your summary instead of assuming it works.
 
+## Code layout
+
+- `src/RhinoCopilot.Core`: agent loop, Claude client, tools, `IModelAdapter`. No RhinoCommon references allowed here.
+- `src/RhinoCopilot.Plugin`: Rhino plugin, Eto panel, `RhinoModelAdapter`, `RhinoHostContext`.
+- `tests/RhinoCopilot.Core.Tests`: xunit tests with fakes in `Support/`.
+- To add a tool, follow "Adding a tool" in `docs/DEVELOPMENT.md`.
+
 ## Where to look
 
 | Topic | File |

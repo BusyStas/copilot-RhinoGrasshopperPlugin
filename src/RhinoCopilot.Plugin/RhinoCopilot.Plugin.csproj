@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net7.0-windows;net7.0;net48</TargetFrameworks>
+    <TargetExtension>.rhp</TargetExtension>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>RhinoCopilot.Plugin</RootNamespace>
+    <AssemblyName>RhinoCopilot</AssemblyName>
+    <Version>0.1.0</Version>
+    <Description>AI copilot for Rhino and Grasshopper.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RhinoCommon" Version="8.0.23304.9001" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RhinoCopilot.Core\RhinoCopilot.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CopilotIcon.ico" LogicalName="CopilotIcon.ico" />
+  </ItemGroup>
+
+</Project>

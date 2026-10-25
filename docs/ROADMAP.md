@@ -5,11 +5,12 @@
 - Goal: learn how well the model handles real modeling tasks and which tools matter most
 - Exit criterion: a handful of realistic requests complete correctly
 
-## Phase 1: Plugin skeleton
+## Phase 1: Plugin skeleton (code written, awaiting first build)
 - RhinoCommon plugin with a docked Eto panel
 - Claude client, agent loop, one undo record per request
-- Read tools and a small set of edit tools
+- Read tools and a small set of edit tools (done: get_document_info, get_selection, list_layers, create_box)
 - Fake-document test harness so the loop is testable without Rhino
+- Next: run `dotnet build` and `dotnet test`, fix first-build errors, load the plugin in Rhino 8 and try the tools
 
 ## Phase 2: Useful tool set
 - Full initial tool catalog from `docs/ARCHITECTURE.md`
