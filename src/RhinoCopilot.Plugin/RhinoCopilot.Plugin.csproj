@@ -11,7 +11,7 @@
     <Version>0.1.0</Version>
     <Description>Stas Copilot: an AI copilot for Rhino and Grasshopper.</Description>
     <!-- RhinoCommon 8.0 ships a .NET Framework build that is used for the net7.0 targets too. That is expected. -->
-    <NoWarn>$(NoWarn);NU1701</NoWarn>
+    <NoWarn>$(NoWarn);NU1701;CA1416</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,5 +35,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\CopilotIcon.ico" LogicalName="CopilotIcon.ico" />
   </ItemGroup>
+
+  <!-- Rhino loads plugins by the .rhp extension. A .rhp is the plugin .dll under another name, so copy it after every build. -->
+  <Target Name="CopyToRhp" AfterTargets="Build">
+    <Copy SourceFiles="$(OutDir)$(AssemblyName).dll" DestinationFiles="$(OutDir)$(AssemblyName).rhp" />
+  </Target>
 
 </Project>
