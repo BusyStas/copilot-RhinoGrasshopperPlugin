@@ -42,7 +42,7 @@ Details are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Getting started
 
-Build and run instructions are in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+On Windows, run `_install.bat`. It checks for the .NET SDK, builds the plugin, and collects it in a `downloads` folder. Full build, run and debug instructions are in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ## Working with AI coding agents
 

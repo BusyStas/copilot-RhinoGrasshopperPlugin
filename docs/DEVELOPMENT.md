@@ -55,6 +55,41 @@ dotnet test tests/RhinoCopilot.Core.Tests
 
 Building the plugin produces `StasCopilot.rhp` under `src/RhinoCopilot.Plugin/bin/<Configuration>/<framework>/`. Rhino 8 on Windows uses the `net7.0-windows` output by default.
 
+## .NET requirements
+
+| Who | What is needed |
+|---|---|
+| Someone who only runs the plugin | Nothing extra. Rhino 8 installs its own .NET runtime (.NET 7 in the first Rhino 8 releases, .NET 8 from Rhino 8.20). |
+| Someone who builds from source | The .NET SDK, version 8 or newer. `_install.bat` checks for it and offers to install it with winget. |
+
+The plugin is built for `net7.0-windows` (Rhino's .NET Core runtime) and `net48` (Rhino's .NET Framework runtime, used if you switch with the `SetDotNetRuntime` command and restart Rhino). Rhino's current guidance is to target `net8.0` and `net48`; moving the targets from `net7.0` to `net8.0` is a small change we can make when needed.
+
+## Build into the downloads folder
+
+On Windows, run this from the repository folder:
+
+```
+_build.bat
+```
+
+It builds the plugin in Release mode and collects the result in a `downloads` folder next to the script (the folder is ignored by git):
+
+```
+downloads\StasCopilot\net7.0-windows\StasCopilot.rhp   (plus its dependencies)
+downloads\StasCopilot\net48\StasCopilot.rhp
+downloads\StasCopilot.zip                              (everything above, ready to share)
+```
+
+To put the result somewhere else, pass a folder:
+
+```
+_build.bat "%USERPROFILE%\Downloads"
+```
+
+`_install.bat` does the same thing after checking prerequisites: it looks for the .NET SDK (version 8 or newer), offers to install it with winget if it is missing, runs `_build.bat`, opens the output folder, and prints the steps to install the plugin in Rhino.
+
+To install the built plugin in Rhino 8, run `PlugInManager`, click Install, and choose `StasCopilot.rhp` from the `net7.0-windows` folder. Use the `net48` one only if you have switched Rhino to .NET Framework. Keep each framework's folder intact, because the `.rhp` needs the DLLs next to it.
+
 ## Tests
 
 ```
