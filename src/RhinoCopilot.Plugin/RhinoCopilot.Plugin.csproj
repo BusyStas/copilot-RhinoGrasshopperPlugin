@@ -37,8 +37,9 @@
   </ItemGroup>
 
   <!-- Rhino loads plugins by the .rhp extension. A .rhp is the plugin .dll under another name, so copy it after every build. -->
-  <Target Name="CopyToRhp" AfterTargets="Build">
-    <Copy SourceFiles="$(OutDir)$(AssemblyName).dll" DestinationFiles="$(OutDir)$(AssemblyName).rhp" />
+  <Target Name="CopyToRhp" AfterTargets="CopyFilesToOutputDirectory" Condition="'$(TargetFramework)' != ''">
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(TargetDir)$(TargetName).rhp" />
+    <Message Importance="high" Text="  Plugin file: $(TargetDir)$(TargetName).rhp" />
   </Target>
 
 </Project>
