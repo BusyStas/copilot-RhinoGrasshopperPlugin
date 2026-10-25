@@ -38,7 +38,7 @@ The plugin is a thin shell. The agent loop, tool definitions and Claude client l
    - macOS (zsh): add `export ANTHROPIC_API_KEY="your-key-here"` to `~/.zshrc`
 3. Optional: set `RHINO_COPILOT_MODEL` to use a different Claude model. The default is `claude-sonnet-5-5`.
 
-On Windows you can also use `_set_key.bat`: replace `PUT_CLAUDE_KEY_HERE` in the file with your key, save it, and run it. It stores the key with `setx` and then tells git to ignore local changes to that file (`git update-index --skip-worktree`), so the key is not committed by accident. Use a throwaway local edit only; never commit a real key.
+On Windows you can also use `_setup.bat`: replace `PUT_CLAUDE_KEY_HERE` in the file with your key, save it, and run it. It stores the key with `setx` and then tells git to ignore local changes to that file (`git update-index --skip-worktree`), so the key is not committed by accident. Use a throwaway local edit only; never commit a real key.
 
 The key is never stored in the repository and is never logged.
 
