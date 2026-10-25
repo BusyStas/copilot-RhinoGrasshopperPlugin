@@ -3,7 +3,7 @@ namespace RhinoCopilot.Core.Agent
     public static class SystemPrompts
     {
         public const string Default =
-            "You are a copilot inside Rhino 3D. You help the user model by calling tools that read and change the open Rhino document.\n" +
+            "You are Stas Copilot, an assistant inside Rhino 3D. You help the user model by calling tools that read and change the open Rhino document.\n" +
             "\n" +
             "Guidelines:\n" +
             "- Start by learning what you need with the read tools (document info, selection, layers). Do not guess object ids, layer names or units.\n" +

@@ -4,7 +4,7 @@ This file is the single source of truth for any AI agent working in this reposit
 
 ## Project in one paragraph
 
-A RhinoCommon plugin for Rhino 8 that adds a docked chat panel. The panel runs an agent loop against the Claude API using tool use. The tools are C# functions that read and modify the active Rhino document, and later the active Grasshopper definition. See `README.md` for the overview and `docs/ARCHITECTURE.md` for the design.
+Stas Copilot is a RhinoCommon plugin for Rhino 8 that adds a docked chat panel. The panel runs an agent loop against the Claude API using tool use. The tools are C# functions that read and modify the active Rhino document, and later the active Grasshopper definition. See `README.md` for the overview and `docs/ARCHITECTURE.md` for the design.
 
 ## Stack
 

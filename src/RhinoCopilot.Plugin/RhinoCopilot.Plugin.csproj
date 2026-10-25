@@ -5,9 +5,11 @@
     <TargetExtension>.rhp</TargetExtension>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>RhinoCopilot.Plugin</RootNamespace>
-    <AssemblyName>RhinoCopilot</AssemblyName>
+    <AssemblyName>StasCopilot</AssemblyName>
+    <AssemblyTitle>Stas Copilot</AssemblyTitle>
+    <Product>Stas Copilot</Product>
     <Version>0.1.0</Version>
-    <Description>AI copilot for Rhino and Grasshopper.</Description>
+    <Description>Stas Copilot: an AI copilot for Rhino and Grasshopper.</Description>
   </PropertyGroup>
 
   <ItemGroup>

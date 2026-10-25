@@ -210,7 +210,7 @@ namespace RhinoCopilot.Plugin
                 {
                     DialogResult answer = MessageBox.Show(
                         "Allow the copilot to run '" + toolName + "'?\n\n" + input.ToString(Newtonsoft.Json.Formatting.Indented),
-                        "Copilot",
+                        "Stas Copilot",
                         MessageBoxButtons.YesNo);
                     completion.SetResult(answer == DialogResult.Yes);
                 });

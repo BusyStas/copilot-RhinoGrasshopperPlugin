@@ -4,12 +4,12 @@ using Rhino.UI;
 
 namespace RhinoCopilot.Plugin
 {
-    /// <summary>The "Copilot" command: opens the chat panel.</summary>
+    /// <summary>The "StasCopilot" command: opens the chat panel.</summary>
     public class CopilotCommand : Command
     {
         public override string EnglishName
         {
-            get { return "Copilot"; }
+            get { return "StasCopilot"; }
         }
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)

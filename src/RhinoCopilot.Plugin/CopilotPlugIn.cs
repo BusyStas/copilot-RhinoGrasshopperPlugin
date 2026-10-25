@@ -19,12 +19,12 @@ namespace RhinoCopilot.Plugin
             try
             {
                 System.Drawing.Icon icon = LoadIcon();
-                Panels.RegisterPanel(this, typeof(CopilotPanel), "Copilot", icon);
+                Panels.RegisterPanel(this, typeof(CopilotPanel), "Stas Copilot", icon);
                 return LoadReturnCode.Success;
             }
             catch (Exception ex)
             {
-                errorMessage = "Could not register the Copilot panel: " + ex.Message;
+                errorMessage = "Could not register the Stas Copilot panel: " + ex.Message;
                 return LoadReturnCode.ErrorShowDialog;
             }
         }

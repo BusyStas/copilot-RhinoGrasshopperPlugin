@@ -53,7 +53,7 @@ namespace RhinoCopilot.Core.Agent
 
             try
             {
-                await _host.BeginUndoRecordAsync("Copilot: " + Shorten(userText, 40)).ConfigureAwait(false);
+                await _host.BeginUndoRecordAsync("Stas Copilot: " + Shorten(userText, 40)).ConfigureAwait(false);
                 undoOpen = true;
 
                 while (true)

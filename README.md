@@ -1,6 +1,6 @@
-# Copilot for Rhino & Grasshopper
+# Stas Copilot for Rhino & Grasshopper
 
-An AI copilot that lives inside Rhino 8. You describe what you want in a chat panel ("build a spiral staircase with 14 steps", "put all the curves on a new layer and offset them 2 units"), and the copilot carries it out in the open document through a set of Rhino tools, checks the result, and keeps going until the task is done.
+Stas Copilot is an AI copilot that lives inside Rhino 8. You describe what you want in a chat panel ("build a spiral staircase with 14 steps", "put all the curves on a new layer and offset them 2 units"), and the copilot carries it out in the open document through a set of Rhino tools, checks the result, and keeps going until the task is done.
 
 > Status: early development. The first skeleton exists (chat panel, agent loop, four tools: document info, selection, layers, create box). It has not been compiled or run yet, so expect first-build fixes. Nothing is released. See [docs/ROADMAP.md](docs/ROADMAP.md).
 

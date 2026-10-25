@@ -13,7 +13,7 @@ src/
     Tools/                      Tool implementations and DefaultTools registry
   RhinoCopilot.Plugin/          The Rhino 8 plugin (net7.0-windows, net7.0, net48)
     CopilotPlugIn.cs            Plugin entry point, registers the panel
-    CopilotCommand.cs           The "Copilot" command that opens the panel
+    CopilotCommand.cs           The "StasCopilot" command that opens the panel
     CopilotPanel.cs             Eto chat panel
     RhinoHostContext.cs         UI-thread marshalling and undo records
     RhinoModelAdapter.cs        IModelAdapter implemented with RhinoCommon
@@ -53,7 +53,7 @@ dotnet build src/RhinoCopilot.Core
 dotnet test tests/RhinoCopilot.Core.Tests
 ```
 
-Building the plugin produces `RhinoCopilot.rhp` under `src/RhinoCopilot.Plugin/bin/<Configuration>/<framework>/`. Rhino 8 on Windows uses the `net7.0-windows` output by default.
+Building the plugin produces `StasCopilot.rhp` under `src/RhinoCopilot.Plugin/bin/<Configuration>/<framework>/`. Rhino 8 on Windows uses the `net7.0-windows` output by default.
 
 ## Tests
 
@@ -66,8 +66,8 @@ The default test run needs no Rhino and makes no network calls. The Claude clien
 ## Run in Rhino
 
 1. Build the plugin.
-2. In Rhino, run the `PlugInManager` command, choose Install, and select `RhinoCopilot.rhp` from the build output folder.
-3. Run the `Copilot` command. The chat panel opens docked in Rhino.
+2. In Rhino, run the `PlugInManager` command, choose Install, and select `StasCopilot.rhp` from the build output folder.
+3. Run the `StasCopilot` command. The chat panel opens docked in Rhino.
 4. Type a request such as "What units is this document in?" or "Make a box 10 by 20 by 5 on a layer called Test."
 5. A whole request is one undo step: run `Undo` once to revert everything the copilot did.
 

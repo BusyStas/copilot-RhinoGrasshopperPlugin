@@ -220,7 +220,7 @@ namespace RhinoCopilot.Core.Tests
 
             await CreateLoop(client).RunAsync(_conversation, "make a tower", CancellationToken.None);
 
-            Assert.Equal("Copilot: make a tower", _host.LastUndoDescription);
+            Assert.Equal("Stas Copilot: make a tower", _host.LastUndoDescription);
         }
     }
 }
