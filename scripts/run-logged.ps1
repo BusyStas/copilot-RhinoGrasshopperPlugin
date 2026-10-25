@@ -1,5 +1,5 @@
 # Runs a batch file from the repository root, showing its output on screen
-# and saving all of it to a log file. Used by _install.bat.
+# and saving all of it to a log file. Used by _install.bat and _build.bat.
 #
 # Usage: run-logged.ps1 -Log <log file> -ScriptName <batch file> [arguments for the batch file]
 
@@ -19,7 +19,7 @@ $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
 Set-Content -LiteralPath $Log -Value "Log started $stamp" -Encoding UTF8
 
 # Tells the batch file that it is already being logged, so it does not relaunch itself.
-$env:STAS_INSTALL_LOGGING = '1'
+$env:STAS_LOGGING = '1'
 
 & cmd.exe /c $ScriptName @ScriptArgs 2>&1 | ForEach-Object {
     $line = $_.ToString()

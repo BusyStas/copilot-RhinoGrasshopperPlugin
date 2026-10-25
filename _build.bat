@@ -5,6 +5,8 @@ rem Builds Stas Copilot (Release) and collects the plugin in a downloads folder.
 rem
 rem Usage:   _build.bat [output-folder]
 rem Default: the "downloads" folder next to this file.
+rem Everything it prints is also saved to _build.txt (when run on its own;
+rem _install.bat saves the build output in _install.txt instead).
 rem
 rem Result:  <output>\StasCopilot\<framework>\StasCopilot.rhp  (plus dependencies)
 rem          <output>\StasCopilot.zip
@@ -12,6 +14,13 @@ rem ---------------------------------------------------------------------------
 
 cd /d "%~dp0"
 
+if defined STAS_LOGGING goto :run
+
+rem Relaunch through PowerShell so the output is shown on screen and saved to _build.txt.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\run-logged.ps1" -Log "%~dp0_build.txt" -ScriptName "_build.bat" %*
+exit /b %errorlevel%
+
+:run
 set "OUT=%~1"
 if not defined OUT set "OUT=%~dp0downloads"
 

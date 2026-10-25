@@ -80,6 +80,8 @@ downloads\StasCopilot\net48\StasCopilot.rhp
 downloads\StasCopilot.zip                              (everything above, ready to share)
 ```
 
+Everything `_build.bat` prints is also saved to `_build.txt` in the repository folder (overwritten on each run, ignored by git). When it runs through `_install.bat`, the build output goes into `_install.txt` instead.
+
 To put the result somewhere else, pass a folder:
 
 ```

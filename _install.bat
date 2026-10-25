@@ -9,7 +9,7 @@ rem
 rem Usage: _install.bat [output-folder]
 rem ---------------------------------------------------------------------------
 
-if defined STAS_INSTALL_LOGGING goto :run
+if defined STAS_LOGGING goto :run
 
 rem Relaunch through PowerShell so the output is shown on screen and saved to _install.txt.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\run-logged.ps1" -Log "%~dp0_install.txt" -ScriptName "_install.bat" %*

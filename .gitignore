@@ -1,6 +1,7 @@
 # Build output
 downloads/
 _install.txt
+_build.txt
 [Bb]in/
 [Oo]bj/
 [Oo]ut/
