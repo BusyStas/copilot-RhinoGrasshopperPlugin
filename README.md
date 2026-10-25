@@ -40,6 +40,14 @@ Details are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 - .NET SDK 7 or newer for building from source
 - An Anthropic API key
 
+## Download
+
+Built plugin files are committed in the [`downloads`](downloads) folder. To try the plugin without building it:
+
+1. Download [`downloads/StasCopilot.zip`](downloads/StasCopilot.zip) and unzip it.
+2. In Rhino 8, run `PlugInManager`, click Install, and choose `StasCopilot\net7.0-windows\StasCopilot.rhp` from the unzipped folder.
+3. Set the `ANTHROPIC_API_KEY` environment variable (see [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)), restart Rhino, and run the `StasCopilot` command.
+
 ## Getting started
 
 On Windows, run `_install.bat`. It checks for the .NET SDK, builds the plugin, and collects it in a `downloads` folder. Full build, run and debug instructions are in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).

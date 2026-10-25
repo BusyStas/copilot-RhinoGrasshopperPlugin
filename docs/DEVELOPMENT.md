@@ -74,7 +74,7 @@ On Windows, run this from the repository folder:
 _build.bat
 ```
 
-It builds the plugin in Release mode and collects the result in a `downloads` folder next to the script (the folder is ignored by git):
+It builds the plugin in Release mode and collects the result in a `downloads` folder next to the script. That folder is committed to git on purpose, so people can download the plugin from GitHub:
 
 ```
 downloads\StasCopilot\net7.0-windows\StasCopilot.rhp   (plus its dependencies)
@@ -83,6 +83,14 @@ downloads\StasCopilot.zip                              (everything above, ready 
 ```
 
 Everything `_build.bat` prints is also saved to `_build.txt` in the repository folder (overwritten on each run, ignored by git). When it runs through `_install.bat`, the build output goes into `_install.txt` instead.
+
+To publish a new build, run `_build.bat`, then commit and push the `downloads` folder:
+
+```
+git add downloads
+git commit -m "Update downloads"
+git push
+```
 
 To put the result somewhere else, pass a folder:
 

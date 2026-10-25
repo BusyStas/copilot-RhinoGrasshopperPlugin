@@ -1,5 +1,4 @@
 # Build output
-downloads/
 _install.txt
 _build.txt
 [Bb]in/
@@ -9,6 +8,11 @@ publish/
 *.rhp
 *.gha
 *.yak
+
+# The downloads folder is committed on purpose so the plugin can be downloaded from GitHub.
+# These lines re-include what the rules above would otherwise hide (*.rhp, bin/, out/).
+!downloads/
+!downloads/**
 
 # IDE and editor
 .vs/
